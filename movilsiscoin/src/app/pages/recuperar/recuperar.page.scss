@@ -1,0 +1,61 @@
+* {
+    margin:0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.header {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+  margin-top: 5%;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-left: 25%;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+ion-content {
+    --background: #34B0D2 url('../../../assets/img/ondas2.png') no-repeat center top  fixed;
+    
+
+  }
+
+  img {
+    width: 130x;
+    height: 100px;
+    align-items: center;
+  }
+
+  .avatar{
+    width: 120%;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  background-color: #394752;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding-top: 5px;
+  transition: all 0.4s;
+  box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.5);
+}
+
+.form-btn:hover {
+  background-color: #28333b;
+  box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.8);
+}
+

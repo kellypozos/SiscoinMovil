@@ -1,0 +1,71 @@
+<ion-content class="background-image">
+  <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color='#145DA0'>
+      <ion-buttons slot="start">
+
+        <ion-back-button text="Regresar" defaultHref="/home" mode="ios"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button color="#fff" (click)="addPersonal()">
+          Agregar
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-title>Empleados</ion-title>
+
+
+  </ion-header>
+  <br>
+
+  <ion-content>
+    <div class="ion-text-center">
+      <ion-list>
+        <ion-item-sliding *ngFor="let personal of personal" #ionItemSliding>
+          <ion-item>
+            <div class="detalles">
+              <p>Nombre</p>
+              <p>
+                {{personal.nombre}}</p>
+            </div>
+
+            <div class="detalles">
+              <p>Apellido Paterno</p>
+              <p> {{personal.apellido_p}}</p>
+            </div>
+            <div class="detalles">
+              <p>Apellido Materno </p>
+              <p> {{personal.apellido_m}}</p>
+            </div>
+            <div class="detalles">
+              <p>Télefono</p>
+              <p>{{personal.telefono}}</p>
+            </div>
+            <div class="detalles">
+              <p>Correo</p>
+
+              <p> {{personal.correo}}</p>
+            </div>
+            <div class="detalles">
+              <p>Sueldo
+              </p>
+              <p> {{personal.sueldo}}</p>
+            </div>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="removePersonal(personal.id_empleado)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-item-option>
+              <ion-item-option color="success" (click)="updatePersonal(personal)">
+                <ion-icon name="pencil" class="pencil"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+  </ion-content>

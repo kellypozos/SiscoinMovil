@@ -1,0 +1,78 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color='#145DA0' no-border>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulo">Siscoin</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openPopover($event)">
+<!--         <img src="../../assets/carrito.svg" />
+ -->      </ion-button>
+    </ion-buttons>
+    <ion-button size="large" color="#145DA0" (click)=openCar()>
+      <div>
+          <ion-icon name="cart-outline"></ion-icon>
+          <p>Carrito</p>
+      </div>
+  </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="banner">
+    <img src="../../assets/ondas-banner.png" />
+
+    <div class="caption ion-padding">
+      ¡Mejora tus ventas <br>
+      con nuestras estrategias!
+    </div>
+    <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"></ion-icon>
+        <ion-input placeholder="Buscar productos"></ion-input>
+        <ion-button slot='end'>
+          <img src="../../assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="title">
+    <h2>Productos</h2>
+
+    <!--  <p>Ver más</p> -->
+  </div>
+
+  <div class="event-slider">
+    <ion-list class="default-left-padding">
+      <ion-list>
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <!-- <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/verano.svg" />
+            </ion-card-header> -->
+
+            <app-cards-promociones [info]="productos">
+              
+            </app-cards-promociones>
+           
+            
+          </ion-card>
+        </ion-col>
+      </ion-list>
+      <!--  <ion-slide>
+     <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/cold.svg" />
+            </ion-card-header>
+
+ 
+          </ion-card>
+        </ion-col>
+      </ion-slide> -->
+    </ion-list>
+  </div>
+
+</ion-content>

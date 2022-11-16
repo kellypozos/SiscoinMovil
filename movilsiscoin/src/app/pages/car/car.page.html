@@ -1,0 +1,62 @@
+<ion-content class="background-image">
+
+    <ion-header>
+        <ion-toolbar color='#145DA0' >
+            <ion-row>
+                <ion-back-button text="Regresar" defaultHref="/home" mode="ios"></ion-back-button>
+    
+    <!--             <ion-icon name="cart-outline"></ion-icon>
+     -->            
+            </ion-row>
+
+        </ion-toolbar>
+        <ion-title >Carrito de compras</ion-title>
+
+    </ion-header>
+    <br>
+    <br>
+    
+
+        <div id="resumen">
+            <div id="icono">
+                <ion-icon  name="cart-outline" ></ion-icon>
+                <h4> Resumen </h4>
+            </div>
+            </div>
+    <ion-list>
+        <ion-item *ngFor="let item of selectedItems" lines="inset">
+            {{item.quantity}} x {{item.name}} Precio ${{item.price}}.00
+            <span slot="end"> $ {{item.price * item.quantity}}.00 </span>
+        </ion-item>
+        <ion-item class="bold">
+            Total: <span slot="end">${{total}}.00 </span>
+        </ion-item>
+        
+    </ion-list>
+    <div class="center">
+    <!--     <ion-button expand="block" shape="round" (click)="mandar($event)">Registrar</ion-button>
+     -->
+     <br>
+     <br>
+     <br>
+    <div class="boton1">
+        <ion-button ion-button class="button1" full round (click)="insertar(item)">Realizar pedido</ion-button>
+
+<!--     <ion-button expand="shape" color="primary" (click)="insertar(item)">Realizar pedido</ion-button>
+ -->
+</div>
+<div class="boton2">
+    <ion-button ion-button class="button2" full round (click)="remove()">Borrar carrito</ion-button>
+    <!-- 
+        <ion-button expand="shape" color="primary" (click)="remove()">Borrar carrito</ion-button>
+ --> 
+</div> 
+
+<!--         <button ion-button class="button1" full round (click)="insertar(item)">Realizar pedido</button>
+ --><!--         <button ion-button class="button2" full round (click)="remove()">Borrar carrito</button>
+ -->        
+ 
+    </div>
+       
+    </ion-content>
+    

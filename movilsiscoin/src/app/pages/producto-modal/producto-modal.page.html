@@ -1,0 +1,66 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+<ion-content class="background-image">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="end">
+        <ion-button color="danger" (click)="closeModal()">
+          Cerrar
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize">{{isUpdate ? 'Editar' : 'Agregar'}} productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-label position="floating">Nombre del producto</ion-label>
+      <div class="wrap-input">
+        <input type="text" class="input" onkeydown="return /[a-z, ]/i.test(event.key)" [(ngModel)]="data.producto"
+          name="producto" placeholder="Nombre del producto" autocomplete="off" />
+
+      </div>
+      <ion-label position="floating">Cantidad</ion-label>
+      <div class="wrap-input">
+        <input type="number" class="input" onkeyUp="return ValNumero(this);" maxlength="10" size="10"
+          [(ngModel)]="data.cantidad" name="cantidad" placeholder="Cantidad" autocomplete="off" />
+
+      </div>
+      <ion-label position="floating">Precio compra</ion-label>
+      <div class="wrap-input">
+        <input type="number" class="input" onkeyUp="return ValNumero(this);" maxlength="10" size="10"
+          [(ngModel)]="data.precio_c" name="precio_c" placeholder=" Precio Compra" autocomplete="off" />
+      </div>
+      <ion-label position="floating">Precio venta</ion-label>
+      <div class="wrap-input">
+        <input type="number" class="input" onkeyUp="return ValNumero(this);" maxlength="10" size="10"
+          [(ngModel)]="data.precio_v" name="precio_v" placeholder="Precio Venta" autocomplete="off" />
+      </div>
+
+      <!--   <ion-item>
+      <ion-label position="floating">Imagen</ion-label>
+      <ion-input [(ngModel)]="data.imagePath" name="imagePath"></ion-input>
+    </ion-item>
+ -->
+      <div *ngIf="isUpdate">
+        <ion-label position="floating">ID Empresa</ion-label>
+
+        <div class="wrap-input">
+          <input class="input" [(ngModel)]="data.id_empresa.id_empresa" name="id_empresa" placeholder="ID Empresa"
+            autocomplete="off" />
+        </div>
+      </div>
+
+      <div *ngIf="!isUpdate">
+        <div class="wrap-input">
+          <input class="input" [(ngModel)]="data.id_empresa" name="id_empresa" placeholder="ID Empresa"
+            autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="container-form-btn">
+        <ion-button type="submit" expand="round" shape="round" color="primary" class="ion-margin-top">
+          {{isUpdate ? 'Editar' : 'Agregar'}}</ion-button>
+      </div>
+    </form>
+  </ion-content>
+</ion-content>

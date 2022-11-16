@@ -1,0 +1,54 @@
+<ion-content class="background-image">
+  <ion-header class="ion-no-border">
+    <ion-toolbar color='#145DA0'>
+      <ion-buttons slot="start">
+        <ion-back-button text="Regresar" defaultHref="/home" mode="ios"></ion-back-button>
+
+      </ion-buttons>
+      <ion-title >Perfil</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-avatar class="perfil">
+    <img src="assets/img/profile.svg" class="pdf">
+  </ion-avatar>
+
+  <div class="info-perfil">
+    <ion-list>
+      <ion-item>
+        <ion-label>
+<!--           <h1>Datos</h1>
+ -->          <p></p>
+          <h1>Nombre</h1>
+          <p>{{User}} </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h1>Correo electrónico</h1>
+          <p>{{Correo}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h1>Telefono</h1>
+          <p>{{telefono}}</p>
+        </ion-label>
+      </ion-item>
+     <!--  <ion-item>
+        <ion-label>
+          <h1>Redes Sociales</h1>
+          <p>
+            <ion-icon class="icon" slot="start" name="logo-facebook"> </ion-icon>
+            <ion-icon class="insta" name="logo-instagram"></ion-icon>
+            <ion-icon class="tw" name="logo-twitter"></ion-icon>
+          </p>
+        </ion-label>
+      </ion-item> -->
+<!--       <ion-button expand="round" shape="round" routerLink="/editarperfil">Editar </ion-button>
+ -->
+
+    </ion-list>
+  </div>
+</ion-content>

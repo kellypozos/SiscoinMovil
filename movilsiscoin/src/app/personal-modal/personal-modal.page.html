@@ -1,0 +1,79 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+<ion-content class="background-image">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="end">
+        <ion-button color="danger" (click)="closeModal()">
+          Cerrar
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize">{{isUpdate ? 'Editar' : 'Agregar'}} personal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-label position="floating">Nombre del empleado</ion-label>
+
+      <div class="wrap-input">
+        <input type="text" class="input" onkeydown="return /[a-z, ]/i.test(event.key)" [(ngModel)]="data.nombre"
+          name="nombre" placeholder="Nombre" />
+
+      </div>
+      <ion-label position="floating">Apellido Paterno</ion-label>
+
+      <div class="wrap-input">
+        <input type="text" class="input" onkeydown="return /[a-z, ]/i.test(event.key)" [(ngModel)]="data.apellido_p"
+          name="apellido_p" placeholder="Apellido Paterno" />
+      </div>
+      <ion-label position="floating">Apellido Materno</ion-label>
+
+      <div class="wrap-input">
+        <input type="text" class="input" onkeydown="return /[a-z, ]/i.test(event.key)" [(ngModel)]="data.apellido_m"
+          name="apellido_m" placeholder="Apellido Materno" />
+      </div>
+      <ion-label position="floating">Teléfono</ion-label>
+
+      <div class="wrap-input">
+        <input type="number" class="input" onkeyUp="return ValNumero(this);" maxlength="10" size="10"
+          [(ngModel)]="data.telefono" name="telefono" placeholder="Télefono" />
+      </div>
+      <ion-label position="floating">Correo</ion-label>
+
+      <div class="wrap-input">
+        <input type="email" class="input" [(ngModel)]="data.correo" name="correo" placeholder="Correo electrónico" />
+
+      </div>
+      <ion-label position="floating">Sueldo</ion-label>
+
+      <div class="wrap-input">
+        <input type="number" class="input" onkeyUp="return ValNumero(this);" maxlength="10" size="10"
+          [(ngModel)]="data.sueldo" name="sueldo" placeholder="Sueldo" />
+      </div>
+
+      <div *ngIf="isUpdate">
+        <ion-label position="floating">ID Empresa</ion-label>
+
+        <div class="wrap-input">
+          <!-- <ion-label position="floating">ID empresa</ion-label> -->
+          <input class="input" [(ngModel)]="data.id_empresa.id_empresa" name="id_empresa" placeholder="ID Empresa" />
+
+        </div>
+      </div>
+
+      <div *ngIf="!isUpdate">
+        <div class="wrap-input">
+          <!-- <ion-label position="floating">ID empresa</ion-label> -->
+          <input class="input" [(ngModel)]="data.id_empresa" name="id_empresa" placeholder="ID Empresa"
+            autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="container-form-btn">
+        <ion-button expand="round" shape="round" type="submit" color="primary" expand="round" shape="round">
+          {{isUpdate ? 'Editar' : 'Agregar'}}</ion-button>
+      </div>
+
+    </form>
+  </ion-content>
+</ion-content>

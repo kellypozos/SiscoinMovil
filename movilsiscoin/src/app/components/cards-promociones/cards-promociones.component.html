@@ -1,0 +1,64 @@
+<div class="contenido">
+  <div class="slider">
+
+    <ion-list lines="none">
+      <ion-col class="ion-text-left">
+        <ion-card *ngFor="let informacion of info">
+          <ion-card-header class="ion-no-padding">
+            <img src="{{ informacion.imagen }}">
+
+          </ion-card-header>
+
+
+<!--             <img src="assets/img/camisa.jpg">
+ -->           
+            <img src="{{informacion.imagePath}}" >
+            <p>Producto {{informacion.producto}}</p>
+            <p>Stock: {{informacion.cantidad}}</p>
+            <p>Precio $ {{informacion.precio_v}}.00</p>
+            <p> {{informacion.descripcion}} </p>
+            <div>
+              <ion-grid>
+                <ion-row>
+               <!--  <ion-col>
+                  <img src="assets/img/menos.png"  width="30" height="30" class="icon" (click)="restItem();">
+                </ion-col>
+                <ion-col>
+                  <div class="quantity">{{quantity}}</div>
+                </ion-col>
+                <ion-col>
+                  <img src="assets/img/mas.png"width="30" height="30"  class="icon" (click)="addItem();">
+                </ion-col> -->
+              </ion-row>
+              <ion-row>
+                <!-- <ion-col>
+                  <div class="total">Total:{{Total}} $</div>
+                </ion-col> -->
+              </ion-row>
+              </ion-grid>
+<!--               <button ion-button class="btn btn-primary" full round (click)="addCart(id_producto)">Añadir</button>
+ -->              
+ <ion-footer>
+  <ion-row class="ion-text-center">
+    <ion-col size="6" class="ion-no-padding">
+<!--       <ion-button (click)="handleLike()">{{LikeValue}}</ion-button>
+ -->
+
+
+      <ion-button expand="full" color="primary" (click)="addCart(informacion.id_producto, quantity)">Agregar al carrito</ion-button>
+    </ion-col>
+    <!-- <ion-col size="6" class="ion-no-padding">
+      <ion-button expand="full" color="secondary" (click)="buyNow(1)">Buy Now</ion-button>
+    </ion-col> -->
+  </ion-row>
+</ion-footer>
+            </div>
+            <!-- <p class="text-right">Total: <span id="total"></span>;</p> <button class="vaciar" id="boton-vaciar"
+              class="btn btn-danger">Vaciar </button> -->
+<!--               <ion-col size="4"><ion-button click="addCar(informacion)"><ion-icon name="add"></ion-icon></ion-button></ion-col>
+ -->          
+        </ion-card>
+      </ion-col>
+    </ion-list>
+  </div>
+</div>

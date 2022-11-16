@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+  
+  }
+  .boton1 {
+    margin-left: 10%;
+
+  }
+
+  .boton2{
+    margin-left: 57%;
+    margin-block-start: -11.8%;
+}
+  
+img {
+    width: 20%;
+    height: 20%;
+}
+ion-content {
+    --background: #34b0d2 url('../../../assets/img/ondas2.png') no-repeat center top fixed;
+    color: #000000;
+  
+  }
+  
+  .titulo {
+    margin-top: 5%;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-left: 25%;
+    font-family: 'Josefin Sans', sans-serif;
+  
+  
+  }
+  
+ion-icon {
+    font-size: 200%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#icono {
+    font-size: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    color: #000000;
+}
+
+#resumen {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    display: grid;
+}
+
+ion-card {
+    padding-bottom: 4%;
+}
+
+#content {
+    align-items: center;
+    width: auto;
+    display: flex;
+}
+
+#name {
+    font-size: 200%;
+    color: black;
+}
+
+#cost {
+    font-size: 100%;
+    color: black;
+}
+
+#description {
+    font-size: 100%;
+}

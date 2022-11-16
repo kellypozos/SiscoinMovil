@@ -1,0 +1,65 @@
+<ion-content class="background-image">
+  <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color='#145DA0'>
+      <ion-buttons slot="start">
+
+        <ion-back-button text="Regresar" defaultHref="/home" mode="ios"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button color="#000" (click)="addProducto()">
+          Agregar
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-title>Productos</ion-title>
+
+
+  </ion-header>
+  <br>
+
+  <ion-content>
+    <div class="ion-text-center">
+      <ion-list>
+        <ion-item-sliding *ngFor="let productos of productos" #ionItemSliding>
+          <ion-item>
+
+            <div class="detalles">
+              <p>Producto</p>
+              <p> {{productos.producto}}</p>
+            </div>
+
+            <div class="detalles">
+              <p>Cantidad</p>
+              <p> {{productos.cantidad}}</p>
+            </div>
+            <div class="detalles">
+              <p>Precio Compra </p>
+              <p>
+                <ion-icon ios="logo-usd" md="logo-usd"></ion-icon> {{productos.precio_c}}
+              </p>
+            </div>
+            <div class="detalles">
+              <p>Precio Venta </p>
+              <p>
+                <ion-icon ios="logo-usd" md="logo-usd"></ion-icon> {{productos.precio_v}}
+              </p>
+            </div>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="removeProducto(productos.id_producto)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-item-option>
+              <ion-item-option color="success" (click)="updateProducto(productos)">
+                <ion-icon name="pencil" class="pencil"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+  </ion-content>
